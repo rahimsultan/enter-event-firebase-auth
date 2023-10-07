@@ -1,8 +1,14 @@
-# React + Vite
+# Entertainment Event Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Link](https://event-management-88e4d.web.app/)
 
-Currently, two official plugins are available:
+Some Features of my Website:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Active Route
+- Registration and Login Option
+- Google Sign in option
+- Private Route
+- Mobile Responsive
+- Dynamic Routing
+
+![screencapture-localhost-5173-2023-10-07-15_00_54](https://github.com/programming-hero-web-course-4/b8a9-event-management-rahimsultan/assets/68680948/0d9bf26b-c9f6-44ee-8db6-9ad6d2a758fc)

@@ -3,7 +3,7 @@ import {
 } from "react-router-dom";
 import Root from "../Components/Root/Root";
 import Blogs from "../Pages/Blogs/Blogs";
-import Contact from "../Pages/Contact";
+import Contact from "../Pages/Contact/Contact";
 import Error from "../Pages/ErrorPage/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
