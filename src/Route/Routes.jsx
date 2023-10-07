@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import Root from "../Components/Root/Root";
 import Blogs from "../Pages/Blogs/Blogs";
+import Contact from "../Pages/Contact";
 import Error from "../Pages/ErrorPage/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -20,6 +21,10 @@ const Routes = createBrowserRouter([
                 path:'/',
                 element:<Home/>,
                 loader: ()=>fetch('/events.json')
+            },
+            {
+                path:'/contact',
+                element: <PrivateRoute><Contact/></PrivateRoute>
             },
             {
                 path:'/signin',
