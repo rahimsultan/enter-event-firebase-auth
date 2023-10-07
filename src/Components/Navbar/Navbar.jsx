@@ -17,6 +17,10 @@ const menuItems = [
     name: 'Contact',
     href: '/contact',
   },
+  {
+    name:'Blogs',
+    href:'/blogs'
+  }
 ]
 
 export function Navbar() {
@@ -145,22 +149,24 @@ export function Navbar() {
                   </nav>
                 </div>
                 <div>
-                <Link to={'/signin'}>
-                    <button
-                        type="button"
-                        className="rounded-md mr-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    >
-                        Sign In
-                    </button>
-                    </Link>
-                    <Link to={'/signup'}>
-                    <button
-                        type="button"
-                        className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                    >
-                        Sign Up
-                    </button>
-                    </Link>
+                        {
+                          user ? 
+                          <button
+                          onClick={handleLogout}
+                            type="button"
+                            className="rounded-md mr-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                          >
+                            Log Out
+                          </button>
+                           : <Link to={'/signin'}>
+                            <button
+                            type="button"
+                            className="rounded-md mr-2 bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                          >
+                            Sign in
+                          </button>
+                          </Link>
+                        }
                 </div>
               </div>
             </div>

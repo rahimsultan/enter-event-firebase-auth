@@ -1,10 +1,14 @@
 
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+import { Link, useNavigate } from 'react-router-dom'
 import InputField from '../../Components/InputField/InputField'
 import useAuth from '../../Hooks/useAuth'
 
 const Register = () => {
-  const {createAccount} = useAuth()
+  const {createAccount, googleLogin} = useAuth()
+  const navigate = useNavigate()
+  const [err, setErr] = useState('')
 
   const handeCreateAccount=(e)=>{
     e.preventDefault()
@@ -15,20 +19,37 @@ const Register = () => {
     const password = form.get('password')
     const photo = form.get('photo')
 
+    setErr('')
+
     if(password.length < 6){
-      return alert('password should be 6 character')
+      return setErr('password should be 6 character')
     }else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)){
-      return alert('special character missing')
+      return setErr('special character missing')
     }else if(!/[A-Z]/.test(password)){
-      return alert('Please provide a Capital Letter')
+      return setErr('Please provide a Capital Letter')
     }
 
     createAccount(email, password)
-    .then(res=>{
-      console.log(res.user);
+    .then(()=>{
+      toast.success('Successfully Registered!')
+      navigate('/')
     })
     .catch(error =>{
-      console.log(error.message);
+      setErr(error.message);
+    })
+  }
+
+  // google signup
+  const handleGoogleLogin=()=>{
+    setErr('')
+    googleLogin()
+    .then(()=>{
+      toast.success('Successfully Registered!')
+      navigate(location.state ? location.state : '/')
+       
+    })
+    .catch(error =>{
+      setErr(error.message)
     })
   }
 
@@ -52,6 +73,7 @@ const Register = () => {
         <InputField info={{name:'photo', type:'text', label: 'Photo URL', placeholder: "enter your img url"}}/>
         <InputField info={{name:'email', type:'email', label: 'Email Address', placeholder: "enter your email"}}/>
         <InputField info={{name:'password', type:'text', label: 'Password', placeholder: "enter your password"}}/>
+        <p className='-mt-3 mb-2 text-red-600 font-semibold text-sm'>{err}</p>
 
         <p className='text-sm font-semibold text-right -mt-2 mb-4'>Already have an account? <Link to={'/signin'} className='text-[15px] text-indigo-600'>Please Login</Link></p>
         <div>
@@ -64,6 +86,7 @@ const Register = () => {
         </div>
       </form>
       <button
+      onClick={handleGoogleLogin}
           type="button"
           className="relative mt-3 inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
         >

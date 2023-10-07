@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Sculpture Exhibition",
+    "category": "Art",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+1",
+    "img": "https://picsum.photos/800/600?random=1",
+    "date": "2023-05-15",
+    "description": "Explore the world of sculpture at our exquisite exhibition featuring renowned artists.",
+    "name": "John Smith"
+  },
+  {
+    "id": 2,
+    "title": "Tech Conference",
+    "category": "Technology",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+2",
+    "img": "https://picsum.photos/800/600?random=2",
+    "date": "2023-04-20",
+    "description": "Join tech enthusiasts and experts to discuss the latest innovations and trends shaping our digital future.",
+    "name": "Emily Johnson"
+  },
+  {
+    "id": 3,
+    "title": "Music Festival",
+    "category": "Music",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+3",
+    "img": "https://picsum.photos/800/600?random=3",
+    "date": "2023-06-28",
+    "description": "Get ready for a music extravaganza! Enjoy live performances by top artists across various genres.",
+    "name": "Michael Davis"
+  },
+  {
+    "id": 4,
+    "title": "Film Premiere",
+    "category": "Entertainment",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+4",
+    "img": "https://picsum.photos/800/600?random=4",
+    "date": "2023-07-10",
+    "description": "Be among the first to witness the premiere of an eagerly awaited film. A star-studded red carpet event.",
+    "name": "Sophia Lee"
+  },
+  {
+    "id": 5,
+    "title": "Green Living Expo",
+    "category": "Environment",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+5",
+    "img": "https://picsum.photos/800/600?random=5",
+    "date": "2023-08-15",
+    "description": "Explore sustainable living options and eco-friendly products at this informative and inspiring expo.",
+    "name": "David Brown"
+  },
+  {
+    "id": 6,
+    "title": "Fashion Show",
+    "category": "Fashion",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+6",
+    "img": "https://picsum.photos/800/600?random=6",
+    "date": "2023-09-25",
+    "description": "Witness the latest trends and couture creations at this glamorous fashion show featuring top designers.",
+    "name": "Olivia Martinez"
+  },
+  {
+    "id": 7,
+    "title": "Food Festival",
+    "category": "Food",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+7",
+    "img": "https://picsum.photos/800/600?random=7",
+    "date": "2023-10-05",
+    "description": "Indulge in a culinary journey with diverse cuisines, cooking demonstrations, and foodie delights.",
+    "name": "Daniel Wilson"
+  },
+  {
+    "id": 8,
+    "title": "Science Symposium",
+    "category": "Science",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+8",
+    "img": "https://picsum.photos/800/600?random=8",
+    "date": "2023-11-15",
+    "description": "Explore groundbreaking scientific discoveries and advancements with leading researchers.",
+    "name": "Linda Adams"
+  },
+  {
+    "id": 9,
+    "title": "Travel Photography Workshop",
+    "category": "Photography",
+    "thumbnail": "https://via.placeholder.com/200x150.png?text=Thumbnail+9",
+    "img": "https://picsum.photos/800/600?random=9",
+    "date": "2023-12-20",
+    "description": "Enhance your photography skills and capture the beauty of the world with expert guidance.",
+    "name": "Robert Clark"
+  }
+]

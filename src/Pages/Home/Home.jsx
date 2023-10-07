@@ -1,13 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import HomeBanner from "../../Components/HomeBanner/HomeBanner";
 import ServiceCard from "../../Components/ServiceCard/ServiceCard";
-import useAuth from "../../Hooks/useAuth";
+import Team from "../../Components/Team/Team";
+import Trusted from "../../Components/Trusted/Trusted";
 
 const Home = () => {
-    const {createAccount}=useAuth()
-    // console.log(createAccount);
     const events = useLoaderData()
-    console.log(events);
+
   return (
     <div>
       <HomeBanner/>
@@ -18,6 +17,12 @@ const Home = () => {
         {
           events.map(event => <ServiceCard key={event.id} event={event}/>)
         }
+      </div>
+      <div className="my-20">
+        <Team/>
+      </div>
+      <div>
+        <Trusted/>
       </div>
     </div>
   )

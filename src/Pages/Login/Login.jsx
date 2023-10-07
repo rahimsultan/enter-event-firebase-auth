@@ -1,12 +1,14 @@
 
+import { useState } from 'react'
+import toast from 'react-hot-toast'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import InputField from '../../Components/InputField/InputField'
 import useAuth from '../../Hooks/useAuth'
-
 const Login = () => {
   const {LogIn, googleLogin} = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
+  const [err, setErr] = useState('')
 
   const handeLoginAccount=(e)=>{
     e.preventDefault()
@@ -14,27 +16,29 @@ const Login = () => {
     const form = new FormData(e.currentTarget)
     const email = form.get('email')
     const password = form.get('password')
+    setErr('')
 
     LogIn(email, password)
-    .then(res=>{
-      console.log(res.user);
+    .then(()=>{
+      toast.success('Successfully Login!')
       navigate(location.state ? location.state : '/')
        
     })
     .catch(error =>{
-      console.log(error);
+      setErr(error.message);
     })
   }
 
   const handleGoogleLogin=()=>{
+    setErr('')
     googleLogin()
-    .then(res=>{
-      console.log(res.user);
+    .then(()=>{
+      toast.success('Successfully Login!')
       navigate(location.state ? location.state : '/')
        
     })
     .catch(error =>{
-      console.log(error);
+      setErr(error);
     })
   }
 
@@ -56,6 +60,7 @@ const Login = () => {
       <form onSubmit={handeLoginAccount} className="" action="#" method="POST">
         <InputField info={{name:'email', type:'email', label: 'Email Address', placeholder: "enter your email"}}/>
         <InputField info={{name:'password', type:'text', label: 'Password', placeholder: "enter your password"}}/>
+        <p className='-mt-3 mb-2 text-red-600 font-semibold text-sm'>{err}</p>
 
         <p className='text-sm font-semibold text-right -mt-2 mb-4'>Don't have an account? <Link to={'/signup'} className='text-[15px] text-indigo-600'>Create A New One</Link></p>
 
