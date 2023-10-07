@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Concerts and Music Festivals",
+    "img": "https://images.pexels.com/photos/1047940/pexels-photo-1047940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 50,
+    "description": "Join us for an unforgettable night of live music at our Concerts and Music Festivals event. Experience the magic of your favorite artists as they take the stage and rock the night away. Whether you're a fan of rock, pop, or jazz, we've got something for everyone. Get ready to dance, sing, and make memories that will last a lifetime. Don't miss out!"
+  },
+  {
+    "id": 2,
+    "title": "Theater and Performing Arts",
+    "img": "https://images.pexels.com/photos/6896194/pexels-photo-6896194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 60,
+    "description": "Step into the world of drama and artistry at our Theater and Performing Arts event. From classic plays to contemporary performances, our talented actors and actresses will transport you to different worlds and emotions. Be prepared to laugh, cry, and applaud the incredible talent on display. Get your tickets now for a night of culture and entertainment!"
+  },
+  {
+    "id": 3,
+    "title": "Film Screenings and Premieres",
+    "img": "https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 40,
+    "description": "Lights, camera, action! Join us for exclusive Film Screenings and Premieres that will take you on a cinematic journey like no other. Be among the first to see the latest blockbusters and independent films before they hit theaters. Get ready for a night of suspense, laughter, and cinematic excellence. Book your seats today!"
+  },
+  {
+    "id": 4,
+    "title": "Comedy Shows",
+    "img": "https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 35,
+    "description": "Get ready to laugh until your sides hurt at our Comedy Shows event. Our lineup of hilarious comedians will have you in stitches with their witty humor and clever jokes. Whether you enjoy observational comedy or stand-up, we've got the best in the business. Grab your friends, and get ready for a night of non-stop laughter!"
+  },
+  {
+    "id": 5,
+    "title": "Sports Events",
+    "img": "https://images.pexels.com/photos/1046538/pexels-photo-1046538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 70,
+    "description": "Cheer for your favorite teams and athletes at our Sports Events. From thrilling basketball games to heart-pounding soccer matches, we've got the action you crave. Feel the adrenaline rush as you watch epic showdowns and historic moments unfold before your eyes. Buy your tickets now and be part of the excitement!"
+  },
+  {
+    "id": 6,
+    "title": "Dance Performances",
+    "img": "https://images.pexels.com/photos/46158/ballet-ballerina-performance-don-quixote-46158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "price": 45,
+    "description": "Experience the elegance and grace of dance at our Dance Performances event. From ballet to contemporary dance, our talented dancers will captivate you with their artistry and skill. Prepare to be moved by the beauty and emotion of dance as our performers take the stage. Join us for a night of artistic expression and creativity!"
+  }
+]

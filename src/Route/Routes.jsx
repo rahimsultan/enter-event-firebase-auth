@@ -6,6 +6,8 @@ import Error from "../Pages/ErrorPage/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = createBrowserRouter([
     {
@@ -15,7 +17,8 @@ const Routes = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home/>
+                element:<Home/>,
+                loader: ()=>fetch('/events.json')
             },
             {
                 path:'/signin',
@@ -24,6 +27,11 @@ const Routes = createBrowserRouter([
             {
                 path:'/signup',
                 element:<Register/>
+            },
+            {
+                path: '/service/:id',
+                element: <PrivateRoute><ServiceDetails/></PrivateRoute>,
+                loader: ()=>fetch('/events.json')
             }
         ]
     }

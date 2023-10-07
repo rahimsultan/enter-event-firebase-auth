@@ -39,7 +39,8 @@ export function Navbar() {
   }
 
   return (
-    <div className="relative w-full bg-white">
+    <div className='absolute top-0 left-0 right-0 z-50'>
+    <div className="relative w-full bg-black/30 text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <span>
@@ -64,7 +65,7 @@ export function Navbar() {
               <li key={item.name}>
                 <NavLink
                   to={item.href}
-                  className="text-sm font-semibold text-gray-800 hover:text-gray-900"
+                  className="text-sm font-semibold text-white hover:text-gray-900"
                 >
                   {item.name}
                 </NavLink>
@@ -166,6 +167,7 @@ export function Navbar() {
           </div>
         )}
       </div>
+    </div>
     </div>
   )
 }
