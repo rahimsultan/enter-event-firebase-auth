@@ -1,8 +1,10 @@
 
+import { updateProfile } from 'firebase/auth'
 import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import InputField from '../../Components/InputField/InputField'
+import auth from '../../Firebase/firebase.config'
 import useAuth from '../../Hooks/useAuth'
 
 const Register = () => {
@@ -31,6 +33,9 @@ const Register = () => {
 
     createAccount(email, password)
     .then(()=>{
+      updateProfile(auth.currentUser, {
+        displayName: name, photoURL:photo
+      })
       toast.success('Successfully Registered!')
       navigate('/')
     })

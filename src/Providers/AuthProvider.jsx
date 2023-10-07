@@ -10,6 +10,7 @@ const AuthProvider = ({children}) => {
   // for use state
   const [user, setUser]=useState(null)
   const [loading, setLoading] = useState(true)
+  const [info, setInfo] = useState({})
   const googleProvider = new GoogleAuthProvider()
 
     const createAccount=(email, password)=>{
@@ -33,19 +34,20 @@ const AuthProvider = ({children}) => {
     const unSubscribe =  onAuthStateChanged(auth, (currentuser)=>{
       console.log(currentuser);
       setUser(currentuser)
+      setInfo({username: currentuser?.displayName, userphoto: currentuser?.photoURL})
       setLoading(false)
       })
       return ()=>{
         unSubscribe()
       }
-    },[])
+    },[user])
 
     // signOut user 
     const LogOut =()=>{
      return signOut(auth)
     }
 
-const authentications ={createAccount, LogIn, user, LogOut, loading, googleLogin}
+const authentications ={createAccount, LogIn, user, LogOut, loading, googleLogin, info}
   return (
     <authContext.Provider value={authentications}>
         {children}

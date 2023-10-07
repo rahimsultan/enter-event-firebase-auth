@@ -18,6 +18,14 @@ const Login = () => {
     const password = form.get('password')
     setErr('')
 
+    if(password.length < 6){
+      return setErr('password should be 6 character')
+    }else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(password)){
+      return setErr('special character missing')
+    }else if(!/[A-Z]/.test(password)){
+      return setErr('Capital Letter missing')
+    }
+
     LogIn(email, password)
     .then(()=>{
       toast.success('Successfully Login!')
