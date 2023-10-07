@@ -1,7 +1,8 @@
 
 const HomeBanner = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen" data-aos="fade-up"
+    data-aos-anchor-placement="center-bottom">
         <div className="relative">
             <img className="w-full h-screen object-cover" src="https://plus.unsplash.com/premium_photo-1681830630610-9f26c9729b75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"/>
             <div className="absolute bg-black/60 inset-0 flex justify-center text-center items-center">
