@@ -4,11 +4,10 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import InputField from '../../Components/InputField/InputField'
-import auth from '../../Firebase/firebase.config'
 import useAuth from '../../Hooks/useAuth'
 
 const Register = () => {
-  const {createAccount, googleLogin} = useAuth()
+  const {createAccount, googleLogin, LogOut} = useAuth()
   const navigate = useNavigate()
   const [err, setErr] = useState('')
 
@@ -32,12 +31,20 @@ const Register = () => {
     }
 
     createAccount(email, password)
-    .then(()=>{
-      updateProfile(auth.currentUser, {
-        displayName: name, photoURL:photo
+    .then((res)=>{
+      updateProfile(res.user, {
+        displayName: name, photoURL: photo
       })
+      .then(()=>{
+        console.log('profile updated');
+      }).catch(()=>{
+        console.log('update error');
+      })
+
       toast.success('Successfully Registered!')
-      navigate('/')
+      LogOut()
+      navigate('/signin')
+  
     })
     .catch(error =>{
       setErr(error.message);
@@ -62,11 +69,7 @@ const Register = () => {
     <>
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 mt-10 lg:px-8">
     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-      <img
-        className="mx-auto h-10 w-auto"
-        src="https://img.logoipsum.com/243.svg"
-        alt="Your Company"
-      />
+    <h1 className='text-2xl font-bold text-center'>Enter Event</h1>
       <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
         Create your account
       </h2>

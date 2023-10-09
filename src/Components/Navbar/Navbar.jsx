@@ -1,6 +1,6 @@
 
 import { Menu, X } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 import { Link, NavLink } from 'react-router-dom'
 import useAuth from '../../Hooks/useAuth'
@@ -25,9 +25,9 @@ const menuItems = [
 ]
 
 export function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const {user, LogOut, info} = useAuth()
+  const {user, LogOut} = useAuth()
   // logout function
   const handleLogout =()=>{
     LogOut()
@@ -39,6 +39,8 @@ export function Navbar() {
     })
   }
 
+  // console.log(user?.displayName, user?.photoURL, 'user', user);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -48,7 +50,7 @@ export function Navbar() {
     <div className="relative w-full bg-black/30 text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
-          <img src="https://img.logoipsum.com/243.svg" alt="" />
+          <h1 className='text-2xl font-bold'>Enter Event</h1>
         </div>
         <div className="hidden lg:block">
           <ul className="inline-flex space-x-8">
@@ -64,16 +66,16 @@ export function Navbar() {
             ))}
           </ul>
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-3">
+
+          <div className='flex items-center gap-3'>
+            <p>{user?.displayName}</p>
+            <div className='h-8 w-8 rounded-full overflow-hidden'>
+            <img src={user?.photoURL} alt="" />
+            </div>
+          </div>
           {
             user ? 
-            <div className='flex items-center gap-3'>
-            <div className='flex items-center gap-3'>
-              <p>{info.username ? info.username : 'Adam'}</p>
-              <div className='h-8 w-8 rounded-full overflow-hidden'>
-              <img src={info.userphoto ? info.userphoto : 'https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png'} alt="" />
-              </div>
-            </div>
             <button
             onClick={handleLogout}
               type="button"
@@ -81,7 +83,6 @@ export function Navbar() {
             >
               Log Out
             </button>
-            </div>
              : <Link to={'/signin'}>
               <button
               type="button"

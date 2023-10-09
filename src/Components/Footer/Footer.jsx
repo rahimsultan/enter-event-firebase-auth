@@ -69,7 +69,7 @@ const Footer = () => {
     <hr className="my-4" />
     <div className="mx-auto max-w-6xl items-center justify-between px-4 md:flex lg:px-0">
       <div className="inline-flex items-center">
-        <img src="https://img.logoipsum.com/243.svg" alt="" />
+        <h1 className='text-2xl font-bold'>Enter Event</h1>
       </div>
       {/* =========== */}
       <div className="-m-1.5 flex flex-wrap">
